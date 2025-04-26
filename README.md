@@ -1,12 +1,49 @@
-# React + Vite
+# Plant Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple plant management application that allows users to create and manage their plants. Users can add new plants and water them with a click.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+plant-management-app
+├── src
+│   ├── index.js          # Entry point of the application
+│   ├── components
+│   │   ├── PlantCard.js  # Represents a single plant
+│   │   └── PlantList.js  # Manages a collection of plants
+│   ├── styles
+│   │   └── styles.css    # Styles for the application
+│   └── utils
+│       └── helpers.js    # Utility functions
+├── package.json          # npm configuration file
+└── README.md             # Project documentation
+```
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Create new plants
+- Water plants with a click
+- View a list of all plants
+
+## Getting Started
+
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory:
+   ```
+   cd plant-management-app
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
+4. Start the application:
+   ```
+   npm start
+   ```
+
+## Contributing
+
+Feel free to submit issues or pull requests to improve the application.
