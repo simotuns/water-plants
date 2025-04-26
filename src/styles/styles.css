@@ -1,0 +1,60 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 20;
+}
+
+h1 {
+    color: darkgreen;
+}
+
+.plant-card {
+    background-color: rgb(7, 64, 21);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white; /* Ensure text is readable on the dark background */
+}
+.plant-card h2 {
+    margin: 0 0 10px;
+}
+
+.plant-card-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.plant-card-button:hover {
+    background-color: #45a049;
+}
+
+.plant-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.plant-image {
+    width: 100px; /* Set the width of the image */
+    height: 100px; /* Set the height of the image */
+    object-fit: cover; /* Ensure the image maintains its aspect ratio and fills the dimensions */
+    border-radius: 5px; /* Add rounded corners to the image */
+    margin-top: 10px; /* Add some spacing above the image */
+}
+
+/* Center the plant list container on the page */
+.plant-list-container {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow cards to wrap to the next row if needed */
+    justify-content: center; /* Center the cards horizontally */
+    align-items: center; /* Center the cards vertically */
+    min-height: 80vh; /* Ensure the container takes up most of the viewport height */
+    margin: 0 auto; /* Center the container itself */
+    align-self: center;
+}
