@@ -12,22 +12,42 @@ class PlantCard {
         const card = document.createElement('div');
         card.className = 'plant-card';
         card.innerHTML = `
-            <h2>${this.name}</h2>
-            <p>Species: ${this.species}</p>
+            <h2 class="plant-name">${this.name}</h2>
+            <p class="plant-species">Species: ${this.species}</p>
             ${this.image ? `<img src="${this.image}" alt="${this.name}" class="plant-image" />` : ''}
             <p class="last-watered">${this.watered ? `Last watered: ${this.lastWatered}` : ''}</p>
             <p class="next-watering"></p>
-            <button class="upload-image-button">Upload Image</button>
+            <button class="edit-button">Edit</button>
+            <button class="add-picture-button">Upload Pic</button>
             <button class="water-button">Water</button>
         `;
 
-        // Add event listener for the "Upload Image" button
-        card.querySelector('.upload-image-button').addEventListener('click', () => this.uploadImage(card));
+        // Add event listener for the "Edit" button
+        card.querySelector('.edit-button').addEventListener('click', () => this.editDetails(card));
+
+        // Add event listener for the "Add Picture" button
+        card.querySelector('.add-picture-button').addEventListener('click', () => this.uploadImage(card));
 
         // Add event listener for the "Water" button
         card.querySelector('.water-button').addEventListener('click', () => this.water(card));
 
         return card;
+    }
+
+    editDetails(card) {
+        // Prompt the user to edit the plant name
+        const newName = prompt('Enter new plant name:', this.name);
+        if (newName) {
+            this.name = newName;
+            card.querySelector('.plant-name').textContent = this.name; // Update the name in the card
+        }
+
+        // Prompt the user to edit the plant species
+        const newSpecies = prompt('Enter new plant species:', this.species);
+        if (newSpecies) {
+            this.species = newSpecies;
+            card.querySelector('.plant-species').textContent = `Species: ${this.species}`; // Update the species in the card
+        }
     }
 
     uploadImage(card) {
@@ -39,8 +59,8 @@ class PlantCard {
             if (file) {
                 const reader = new FileReader();
                 reader.onload = (e) => {
-                    this.image = e.target.result; // Store the uploaded image as a Base64 string
-                    this.updateImage(card); // Update the card with the new image
+                    this.image = e.target.result; // Update the image property
+                    this.updateImage(card); // Update the image in the card
                 };
                 reader.readAsDataURL(file);
             }
